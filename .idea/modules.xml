@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Desenvolvimento.iml" filepath="$PROJECT_DIR$/.idea/Desenvolvimento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/avaltinnova/avaltinnova.iml" filepath="$PROJECT_DIR$/avaltinnova/avaltinnova.iml" />
+    </modules>
+  </component>
+</project>
