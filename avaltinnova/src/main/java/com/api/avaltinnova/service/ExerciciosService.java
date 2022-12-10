@@ -1,7 +1,6 @@
 package com.api.avaltinnova.service;
 
 import com.api.avaltinnova.dto.Exercicio1DTO;
-//import com.api.avaltinnova.utils.CalculaVotos;
 import com.api.avaltinnova.dto.Exercicio2DTO;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,6 @@ public class ExerciciosService {
     public List<Exercicio1DTO> calculaPerc(){
 
         Exercicio1DTO exercicio1DTO = new Exercicio1DTO();
-//        CalculaVotos calculaVotos = new CalculaVotos();
 
         Double percVotosValidos = exercicio1DTO.calculaVotosValidos(exercicio1DTO.getTotalEleitores(),
                 exercicio1DTO.getValidos());
@@ -32,8 +30,7 @@ public class ExerciciosService {
     public List<Exercicio2DTO> ordenaVetorBubbleSort(){
 
         Exercicio2DTO exercicio2DTO = new Exercicio2DTO();
-        int[] vetorOrdenado = exercicio2DTO.ordenarVetor(exercicio2DTO.getVetorOrdenado(),
-                exercicio2DTO.getAuxi(),exercicio2DTO.getI());
+        int[] vetorOrdenado = exercicio2DTO.ordenarVetor(exercicio2DTO.getVetorOrdenado());
 
         exercicio2DTO.setVetorOrdenado(vetorOrdenado);
         return List.of(exercicio2DTO);

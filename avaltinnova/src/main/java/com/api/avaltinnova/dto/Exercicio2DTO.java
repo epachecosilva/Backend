@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 public class Exercicio2DTO {
     private int[] vetorOriginal = {5, 3, 2, 4, 7, 1, 0, 6};
     private int[] vetorOrdenado = {5, 3, 2, 4, 7, 1, 0, 6};
-    int auxi = 0;
-    int i = 0;
 
-    public int[] ordenarVetor(int[] vet, Integer aux, Integer i){
+    public int[] ordenarVetor(int[] vet){
+        int aux = 0;
+        int i = 0;
         for(i = 0; i<8; i++){
             for(int j = 0; j<7; j++){
                 if(vetorOrdenado[j] > vetorOrdenado[j + 1]){
@@ -31,5 +31,4 @@ public class Exercicio2DTO {
         }
         return vetorOrdenado;
     }
-
 }
