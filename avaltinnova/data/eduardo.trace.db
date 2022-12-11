@@ -1,0 +1,3 @@
+2022-12-10 23:12:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_VEICULOS" not found; SQL statement:
+SELECT * FROM TB_VEICULOS WHERE TB_VEICULOS.MARCA = ? AND TB_VEICULOS.ANO = ? AND TB_VEICULOS.DESCRICAO = ? [42102-214]
