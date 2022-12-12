@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/veiculos")
@@ -48,7 +47,6 @@ public class VeiculosController {
         BeanUtils.copyProperties(veiculoDTO, veiculo);
         veiculo.setCreated(LocalDateTime.now(ZoneId.of("UTC")));
         veiculo.setUpdated(LocalDateTime.now(ZoneId.of("UTC")));
-        veiculo.setVendido(false);
         return ResponseEntity.status(HttpStatus.CREATED).body(veiculoService.save(veiculo));
     }
     @PutMapping("/{id}")

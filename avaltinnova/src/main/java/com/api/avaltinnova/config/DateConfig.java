@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class DateConfig {
-    public static final String DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+    public static final String DATETIME_FORMAT = "dd-MM-yyyy";
     public static LocalDateTimeSerializer LOCAL_DATETIME_SERIALIZER = new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DATETIME_FORMAT));
 
     @Bean

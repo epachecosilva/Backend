@@ -1,6 +1,4 @@
 package com.api.avaltinnova.service;
-import com.api.avaltinnova.dto.Exercicio1DTO;
-import com.api.avaltinnova.dto.Exercicio2DTO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,52 +6,86 @@ import java.util.List;
 
 @Service
 public class ExerciciosService {
-
-    public List<Exercicio1DTO> calculaPerc(){
-
-        Exercicio1DTO exercicio1DTO = new Exercicio1DTO();
-
-        Double percVotosValidos = exercicio1DTO.calculaVotosValidos(exercicio1DTO.getTotalEleitores(),
-                exercicio1DTO.getValidos());
-        exercicio1DTO.setPercVotosValidos(percVotosValidos);
-
-        Double percVotosNulos = exercicio1DTO.calculaVotosNulos(exercicio1DTO.getTotalEleitores(),
-                exercicio1DTO.getNulos());
-        exercicio1DTO.setPercVotosNulos(percVotosNulos);
-
-        Double percVotosBrancos = exercicio1DTO.calculaVotosBrancos(exercicio1DTO.getTotalEleitores(),
-                exercicio1DTO.getVotosBrancos());
-        exercicio1DTO.setPercVotosBrancos(percVotosBrancos);
-
-        return List.of(exercicio1DTO);
+    /**
+     * Exercício 1 - Método que calcula percentual de Votos Válidos.
+     * @param totalEleitores
+     * @param validos
+     * @return
+     */
+    public Integer calculaVotosValidos(Integer totalEleitores, Integer validos){
+        return (validos * 100) / totalEleitores;
     }
-    public List<Exercicio2DTO> ordenaVetorBubbleSort(){
-
-        Exercicio2DTO exercicio2DTO = new Exercicio2DTO();
-        int[] vetorOrdenado = exercicio2DTO.ordenarVetor(exercicio2DTO.getVetorOrdenado());
-
-        exercicio2DTO.setVetorOrdenado(vetorOrdenado);
-        return List.of(exercicio2DTO);
+    /**
+     * Exercício 1 - Método que calcula percentual de Votos Nulos.
+     * @param totalEleitores
+     * @param nulos
+     * @return
+     */
+    public Integer calculaVotosNulos(Integer totalEleitores, Integer nulos){
+        return (nulos * 100) / totalEleitores;
     }
+    /**
+     * Exercício 1 - Método que calcula percentual de Votos em Branco.
+     * @param totalEleitores
+     * @param brancos
+     * @return
+     */
+    public Integer calculaVotosBrancos(Integer totalEleitores, Integer brancos){
+        return (brancos * 100) / totalEleitores;
+    }
+
+    /**
+     * Exercício 2 - Ordenar Vetor utilizando Bubble Sort.
+     * @param vetor
+     * @return Vetor Ordenado;
+     */
+    public Integer[] ordenarVetor(Integer[] vetor){
+        int aux = 0;
+        int i = 0;
+        for(i = 0; i<8; i++){
+            for(int j = 0; j<7; j++){
+                if(vetor[j] > vetor[j + 1]){
+                    aux = vetor[j];
+                    vetor[j] = vetor[j+1];
+                    vetor[j+1] = aux;
+                }
+            }
+        }
+        return vetor;
+    }
+
+    /**
+     * Exercício 3 - Calcula fatorial do número informado.
+     * @param numero
+     * @return
+     */
     public String calcularFatorial(Integer numero) {
         String fatorial = numero + "! = ";
         int f = 1;
-        if (numero >= 2) {
-            for (int i = 1; i <= numero; i++) {
+
+        if(numero >= 2) {
+            for(int i = 1; i <= numero; i++) {
                 f *= i;
-                if (i != numero) {
+                if(i != numero) {
                     fatorial += i + " x ";
                 } else {
                     fatorial += i;
                 }
             }
+
             fatorial += " = " + f;
         } else {
             fatorial += f;
         }
+
         return fatorial;
     }
 
+    /**
+     * Exercício 4 - Somar os múltiplos de 3 e 5 referente ao Número Informado.
+     * @param numero
+     * @return
+     */
     public Integer somarMultiplos(Integer numero) {
         int soma = 0;
         List<Integer> multiplos = new ArrayList<Integer>();

@@ -3,7 +3,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -15,6 +15,6 @@ public class VeiculoDTO {
     private String descricao;
     private Integer ano;
     private Boolean vendido;
-    private Date created;
-    private Date updated;
+    private LocalDateTime created;
+    private LocalDateTime updated;
 }
