@@ -45,8 +45,10 @@ public class VeiculosController {
     public ResponseEntity<Object> cadastrarVeiculo(@RequestBody VeiculoDTO veiculoDTO){
         var veiculo = new Veiculo();
         BeanUtils.copyProperties(veiculoDTO, veiculo);
-        veiculo.setCreated(LocalDateTime.now(ZoneId.of("UTC")));
-        veiculo.setUpdated(LocalDateTime.now(ZoneId.of("UTC")));
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        veiculo.setCreated(sqlDate);
+        veiculo.setUpdated(sqlDate);
         return ResponseEntity.status(HttpStatus.CREATED).body(veiculoService.save(veiculo));
     }
     @PutMapping("/{id}")
@@ -58,9 +60,11 @@ public class VeiculosController {
         }
         var veiculo = new Veiculo();
         BeanUtils.copyProperties(veiculoDTO, veiculo);
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         veiculo.setId(veiculoOptional.get().getId());
         veiculo.setCreated(veiculoOptional.get().getCreated());
-        veiculo.setUpdated(LocalDateTime.now(ZoneId.of("UTC")));
+        veiculo.setUpdated(sqlDate);
 
         return ResponseEntity.status(HttpStatus.OK).body(veiculoService.save(veiculo));
     }
@@ -79,12 +83,16 @@ public class VeiculosController {
         }
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> excluirVeiculo(@PathVariable Long id){
-        Optional<Veiculo> veiculoOptional = veiculoService.findById(id);
-        if (!veiculoOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Veículo não encontrado.");
+    public ResponseEntity excluirVeiculo(@PathVariable Long id) {
+        try {
+            return veiculoRepository.findById(id)
+                    .map(veiculo -> {
+                        veiculoRepository.deleteById(id);
+                        return ResponseEntity.ok().build();
+                    }).orElse(ResponseEntity.notFound().build());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
-        veiculoService.delete(veiculoOptional.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Veículo deletado com sucesso.");
     }
 }

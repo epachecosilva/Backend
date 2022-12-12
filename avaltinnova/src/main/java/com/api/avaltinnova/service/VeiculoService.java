@@ -31,8 +31,4 @@ public class VeiculoService {
         return veiculoRepository.findById(id);
     }
 
-    @Transactional
-    public void delete(Veiculo veiculo){
-        veiculoRepository.delete(veiculo);
-    }
 }
