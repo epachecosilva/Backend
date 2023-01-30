@@ -1,8 +1,7 @@
-package com.api.avaltinnova.service;
+package com.api.backend.service;
 
-import com.api.avaltinnova.model.Veiculo;
-import com.api.avaltinnova.repository.VeiculoRepository;
-import jakarta.transaction.Transactional;
+import com.api.backend.model.Veiculo;
+import com.api.backend.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

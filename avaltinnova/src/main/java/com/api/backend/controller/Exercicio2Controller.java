@@ -1,6 +1,6 @@
-package com.api.avaltinnova.controller;
+package com.api.backend.controller;
 
-import com.api.avaltinnova.service.ExerciciosService;
+import com.api.backend.service.ExerciciosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,10 +1,10 @@
-package com.api.avaltinnova;
+package com.api.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AvaltinnovaApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {

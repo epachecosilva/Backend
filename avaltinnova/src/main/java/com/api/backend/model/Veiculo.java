@@ -1,4 +1,4 @@
-package com.api.avaltinnova.model;
+package com.api.backend.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.api.avaltinnova.dto;
+package com.api.backend.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

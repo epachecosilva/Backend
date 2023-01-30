@@ -1,17 +1,15 @@
-package com.api.avaltinnova.controller;
+package com.api.backend.controller;
 
-import com.api.avaltinnova.dto.VeiculoDTO;
-import com.api.avaltinnova.model.Veiculo;
-import com.api.avaltinnova.repository.VeiculoRepository;
-import com.api.avaltinnova.service.VeiculoService;
+import com.api.backend.dto.VeiculoDTO;
+import com.api.backend.model.Veiculo;
+import com.api.backend.repository.VeiculoRepository;
+import com.api.backend.service.VeiculoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,9 +1,7 @@
-package com.api.avaltinnova.repository;
+package com.api.backend.repository;
 
-import com.api.avaltinnova.model.Veiculo;
+import com.api.backend.model.Veiculo;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
